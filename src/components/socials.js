@@ -6,35 +6,35 @@ import styled from "styled-components"
 
 const Socials = ({ siteTitle }) => (
   <SocialsContainer>
-    <SocialsIcon href="http://www.facebook.com/calvinarsenia">
+    <SocialsIcon href="https://www.facebook.com/FourAcesGuitarQuartet">
       <StaticImage
         src="../images/socials/facebook.png"
         width={32}
         alt="Facebook"
       />
     </SocialsIcon>
-    <SocialsIcon href="http://www.facebook.com/calvinarsenia">
+    <SocialsIcon href="https://open.spotify.com/artist/4QYs1g8YbpUTqkBpdT2Zs2">
       <StaticImage
         src="../images/socials/spotify.png"
         width={32}
         alt="Spotify"
       />
     </SocialsIcon>
-    <SocialsIcon href="http://www.facebook.com/calvinarsenia">
+    <SocialsIcon href="https://www.youtube.com/user/FourAcesGQ">
       <StaticImage
         src="../images/socials/youtube.png"
         width={32}
         alt="Youtube"
       />
     </SocialsIcon>
-    <SocialsIcon href="http://www.facebook.com/calvinarsenia">
+    <SocialsIcon href="https://music.apple.com/us/artist/four-aces-guitar-quartet/770675648">
       <StaticImage
         src="../images/socials/itunes.png"
         width={32}
         alt="Itunes"
       />
     </SocialsIcon>
-    <SocialsIcon href="http://www.facebook.com/calvinarsenia">
+    <SocialsIcon href="https://www.instagram.com/fouracesguitarquartet/">
       <StaticImage
         src="../images/socials/instagram.png"
         width={32}

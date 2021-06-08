@@ -4,12 +4,10 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
+/*
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Socials from "../components/socials"
-import Language from "../components/language"
 
 import Header from "./header"
 import "./layout.css"
@@ -30,10 +28,8 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
      
-      <div style={{ fontFamily: 'Fjalla One' }}>
+      <div>
         <Main>
-          <Socials></Socials>
-          <Language></Language>
           {children}
         </Main>
       </div>
@@ -50,4 +46,4 @@ export default Layout
 const Main = styled.main`
 {
   color: var(--textColor);
-}`
+}`*/

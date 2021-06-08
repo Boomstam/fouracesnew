@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 /*import NavBar from "../components/navbar"*/
 
 const IndexPage = () => (
-  <Layout>
+  <div>
     <StaticImage
       src="../images/homeImage.jpg"
       quality={95}
@@ -18,9 +18,11 @@ const IndexPage = () => (
     />
     <HomeTitle>FOUR ACES</HomeTitle>
     <HomeSubTitle>Guitar Quartet</HomeSubTitle>
-    
-  </Layout>
+  </div>
 )
+
+//</Layout>
+//<Layout>
 
 //<Seo title="Home" />
 //<NavBar></NavBar>

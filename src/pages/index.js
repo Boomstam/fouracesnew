@@ -2,6 +2,7 @@ import * as React from "react"
 //import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
+import "@fontsource/eb-garamond/500.css" // Weight 500.
 
 //import Layout from "../components/layout"
 //import Seo from "../components/seo"
@@ -63,6 +64,7 @@ import Language from "../components/language"
 export default IndexPage
 
 const HomeTitle = styled.div`
+  font-family: "EB Garamond";
   width: 100%;
   font-weight: 1000;
   text-align : center;

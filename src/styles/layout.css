@@ -6,6 +6,18 @@
     font-family: "EB Garamond";
 }
 
+.homeImgContainer>div {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    filter: brightness(75%);
+}
+
+@media screen and (min-width: 992px) {}
+
 
 /* Social Media Icons */
 
@@ -14,6 +26,9 @@ a div picture img {
     border-radius: 20px;
     border: 1px solid white;
 }
+
+
+/* Reset HTML */
 
 html {
     -ms-text-size-adjust: 100%;

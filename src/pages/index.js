@@ -6,7 +6,7 @@ import "@fontsource/eb-garamond/500.css" // Weight 500.
 
 import Layout from "../components/layout"
 //import Seo from "../components/seo"
-/*import NavBar from "../components/navbar"*/
+import NavBar from "../components/navbar"
 
 const homeImgStyle = { 
   height:`100vh`, 

@@ -9,7 +9,10 @@ import styled from 'styled-components'
 
 const IndexPage = () => (
   <div>
-    <StaticImage src="../images/homeImage.jpg"/>
+    <StaticImage 
+      src="../images/homeImage.jpg"
+      style={{ height: `100vh`, position: `absolute`, left: `0`, top: `0`, zIndex : `-1`, filter: `brightness(75%)` }}
+      alt="Four Aces Belgica"/>
     <HomeTitle>FOUR ACES</HomeTitle>
     <HomeSubTitle>Guitar Quartet</HomeSubTitle>
   </div>

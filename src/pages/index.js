@@ -9,17 +9,18 @@ import styled from 'styled-components'
 
 const IndexPage = () => (
   <div>
-    <StaticImage
-      src="../images/homeImage.jpg"
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF", "JPG"]}
-      alt="Four Aces Belgica"
-      style={{ height: `100vh`, position: `absolute`, left: `0`, top: `0`, zIndex : `-1`, filter: `brightness(75%)` }}
-    />
+    <StaticImage src="../images/homeImage.jpg"/>
     <HomeTitle>FOUR ACES</HomeTitle>
     <HomeSubTitle>Guitar Quartet</HomeSubTitle>
   </div>
 )
+/*
+src="../images/homeImage.jpg"
+      quality={95}
+      formats={["AUTO", "WEBP", "AVIF", "JPG"]}
+      alt="Four Aces Belgica"
+      style={{ height: `100vh`, position: `absolute`, left: `0`, top: `0`, zIndex : `-1`, filter: `brightness(75%)` }}
+*/
 
 /*
 <StaticImage

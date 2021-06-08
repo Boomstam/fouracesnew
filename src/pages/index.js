@@ -7,11 +7,20 @@ import styled from 'styled-components'
 //import Seo from "../components/seo"
 /*import NavBar from "../components/navbar"*/
 
+const homeImgStyle = { 
+  height:`100vh`, 
+  position: `absolute`, 
+  left: `0`, 
+  top: `0`, 
+  zIndex : `-1`, 
+  filter: `brightness(75%)`
+};
+
 const IndexPage = () => (
   <div>
     <StaticImage 
       src="../images/homeImage.jpg"
-      style={{ height: `100vh`, position: `absolute`, left: `0`, top: `0`, zIndex : `-1`, filter: `brightness(75%)` }}
+      style={homeImgStyle}
       alt="Four Aces Belgica"/>
     <HomeTitle>FOUR ACES</HomeTitle>
     <HomeSubTitle>Guitar Quartet</HomeSubTitle>
@@ -60,6 +69,7 @@ const HomeTitle = styled.div`
   position: absolute;
   font-size: 100px;
   top: calc(40% - 100px);
+  left: 0;
 `
 
 const HomeSubTitle = styled.div`
@@ -69,6 +79,7 @@ const HomeSubTitle = styled.div`
   position: absolute;
   font-size: 50px;
   top: calc(45% - 50px);
+  left: 0;
 `
 
 

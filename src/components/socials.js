@@ -10,56 +10,51 @@ const Socials = ({ siteTitle }) => (
       <StaticImage
         src="../images/socials/facebook.png"
         width={32}
-        /*quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}*/
         alt="Facebook"
-        //style={{ height: `100%`, width: `100%` }}
+        style={iconStyle}
       />
     </SocialsIcon>
     <SocialsIcon href="http://www.facebook.com/calvinarsenia">
       <StaticImage
         src="../images/socials/spotify.png"
         width={32}
-        /*quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}*/
         alt="Spotify"
-        //style={{ height: `100%`, width: `100%` }}
+        style={iconStyle}
       />
     </SocialsIcon>
     <SocialsIcon href="http://www.facebook.com/calvinarsenia">
       <StaticImage
         src="../images/socials/youtube.png"
         width={32}
-        /*quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}*/
         alt="Youtube"
-        //style={{ height: `100%`, width: `100%` }}
+        style={iconStyle}
       />
     </SocialsIcon>
     <SocialsIcon href="http://www.facebook.com/calvinarsenia">
       <StaticImage
         src="../images/socials/itunes.png"
         width={32}
-        /*quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}*/
         alt="Itunes"
-        //style={{ height: `100%`, width: `100%` }}
+        style={iconStyle}
       />
     </SocialsIcon>
     <SocialsIcon href="http://www.facebook.com/calvinarsenia">
       <StaticImage
         src="../images/socials/instagram.png"
         width={32}
-        /*quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}*/
         alt="Instagram"
-        //style={{ height: `100%`, width: `100%` }}
+        style={iconStyle}
       />
     </SocialsIcon>
   </SocialsContainer>
 )
 
 export default Socials
+
+const iconStyle = {
+  height: `100%`, 
+  width: `100%`
+}
 
 const SocialsContainer = styled.div`
 {

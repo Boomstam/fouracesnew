@@ -6,6 +6,11 @@ import styled from "styled-components"
 
 const NavBar = ({ siteTitle }) => (
   <NavContainer>
+      <Hamburger>
+          <Bun></Bun>
+          <Bun></Bun>
+          <Bun></Bun>
+      </Hamburger>
       <NavItem>HOME</NavItem>
       <NavItem>MUSIC</NavItem>
       <NavItem>MEDIA</NavItem>
@@ -18,14 +23,27 @@ const NavBar = ({ siteTitle }) => (
 
 export default NavBar
 
+const Hamburger = styled.div`
+
+`
+
+const Bun = styled.div`
+
+`
+
 const NavContainer = styled.nav`
     display: flex;
-    width: 50%;
-    left: 25%;
+    width: 80%;
+    left: 10%;
     position: absolute;
     font-size: var(--navBarFontSize);
-    font-weight: 1000;
-    top: calc(60% - var(--navBarFontSize));
+    font-weight: 1000;    
+    top: 60vh;
+    display: none;
+
+    @media screen and (min-width: 992px){
+        display: flex;
+    }
 `
 
 const NavItem = styled.div`

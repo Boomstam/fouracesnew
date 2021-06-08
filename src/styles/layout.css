@@ -1,7 +1,7 @@
 :root {
     --titleFontSize: 120px;
     --subTitleFontSize: 60px;
-    --navBarFontSize: 24px;
+    --navBarFontSize: 20px;
     --textColor: white;
     font-family: "EB Garamond";
 }

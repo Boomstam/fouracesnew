@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import "@fontsource/eb-garamond/500.css" // Weight 500.
 
-//import Layout from "../components/layout"
+import Layout from "../components/layout"
 //import Seo from "../components/seo"
 /*import NavBar from "../components/navbar"*/
 
@@ -18,14 +18,14 @@ const homeImgStyle = {
 };
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <StaticImage 
       src="../images/homeImage.jpg"
       style={homeImgStyle}
       alt="Four Aces Belgica"/>
     <HomeTitle>FOUR ACES</HomeTitle>
     <HomeSubTitle>Guitar Quartet</HomeSubTitle>
-  </div>
+  </Layout>
 )
 /*
 src="../images/homeImage.jpg"

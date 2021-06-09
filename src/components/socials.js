@@ -62,6 +62,7 @@ const SocialsIcon = styled.a`
   margin: 0px 10px;
   padding: 0px;
   cursor: pointer;
+  transition: scale 100ms;
 
   &:hover {
     scale: 1.1;

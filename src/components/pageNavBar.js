@@ -88,6 +88,7 @@ const NavItem = styled(Link)`
     flex-grow: 1;
     text-align: center;
     text-decoration: none;
+    transition: border 100ms, scale 100ms;
 
     &:hover {
         border-style: double;

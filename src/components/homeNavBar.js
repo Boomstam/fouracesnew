@@ -13,7 +13,7 @@ const links = {
     contact: "/contact",
 }
 
-const NavBar = () => (
+const HomeNavBar = () => (
   <Nav>
       <Hamburger>
             <Bun></Bun>
@@ -32,7 +32,7 @@ const NavBar = () => (
   </Nav>
 )
 
-export default NavBar
+export default HomeNavBar
 
 const Nav = styled.div`
     

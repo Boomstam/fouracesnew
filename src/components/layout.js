@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "../styles/layout.css"
 import styled from "styled-components"
-import NavBar from "./navbar"
 import Socials from "./socials"
 import "@fontsource/eb-garamond/500.css" // Weight 500.
 
@@ -25,7 +24,6 @@ const Layout = ({ children }) => {
     <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <Main>
-          <NavBar></NavBar>
           <Socials></Socials>
           {children}
         </Main>

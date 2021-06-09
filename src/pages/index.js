@@ -3,9 +3,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import { css } from "@emotion/react"
+import HomeNavBar from "../components/homeNavBar"
 
 const IndexPage = () => (
   <Layout>
+    <HomeNavBar></HomeNavBar>
     <div className="homeImgContainer">
       <StaticImage 
         src="../images/homeImage.jpg"

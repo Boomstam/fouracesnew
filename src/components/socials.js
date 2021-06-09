@@ -52,6 +52,7 @@ const SocialsContainer = styled.div`
     position: fixed;
     right: 0;
     top: 10px;
+    z-index: 1;
 }`
 
 const SocialsIcon = styled.a`

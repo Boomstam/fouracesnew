@@ -1,5 +1,6 @@
-import React from 'react';
-import Layout from '../components/layout';
+import React from 'react'
+import Layout from '../components/layout'
+import PageHeader from '../components/pageHeader'
 
 export default class Contact extends React.Component
 {
@@ -7,6 +8,8 @@ export default class Contact extends React.Component
       {
           return(
               <Layout>
+                <PageHeader></PageHeader>
+                <div>Contact</div>
             </Layout>
           )
       }

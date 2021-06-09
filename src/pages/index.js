@@ -24,10 +24,14 @@ const HomeTitle = styled.div`
   font-weight: 1000;
   text-align : center;
   position: absolute;
-  font-size: 100px;
-  top: 18vh;
+  font-size: 112px;
+  top: 175px;
   line-height: 100px;
   left: 0;
+
+  @media screen and (min-width: 610px){
+    top: 140px;
+  }
 `
 
 const HomeSubTitle = styled.div`
@@ -36,10 +40,10 @@ const HomeSubTitle = styled.div`
   text-align : center;
   position: absolute;
   font-size: 50px;
-  top: 60vh;
+  top: 450px;
   left: 0;
 
-  @media screen and (min-width: 558px){
-    top: 40vh;
+  @media screen and (min-width: 610px){
+    top: 280px;
   }
 `

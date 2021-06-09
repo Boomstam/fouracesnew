@@ -66,7 +66,7 @@ const NavContainer = styled.nav`
     position: absolute;
     font-size: var(--navBarFontSize);
     font-weight: 1000;    
-    top: 60vh;
+    top: 450px;
     display: none;
 
     @media screen and (min-width: 992px){
@@ -87,9 +87,3 @@ const NavItem = styled(Link)`
         cursor: pointer;
     }
 `
-
-/*
-<StyledLink to={concerts} onClick={(event) => this.handleClick(event, concerts)}>
-                    Concerts
-                </StyledLink>
-*/

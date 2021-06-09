@@ -50,8 +50,8 @@ const SocialsContainer = styled.div`
 {
     display: flex;
     position: fixed;
-    right: 0;
-    top: 10px;
+    right: 5px;
+    top: 15px;
 }`
 
 const SocialsIcon = styled.a`

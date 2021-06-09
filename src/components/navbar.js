@@ -43,9 +43,19 @@ const Hamburger = styled.div`
     left: 15px;
     top: 15px;
     display: block;
+    cursor: pointer;
+    transition: scale 100ms;
 
     @media screen and (min-width: 992px){
         display: none;
+    }
+
+    &:hover {
+        scale: 1.1;
+    }
+
+    &:active {
+        scale: 0.9;
     }
 `
 
@@ -84,5 +94,9 @@ const NavItem = styled(Link)`
         border-color: rgba(255, 255, 255, 0.5);
         border-width: 2px 0px;
         cursor: pointer;
+    }
+
+    &:active {
+        scale: 0.9;
     }
 `

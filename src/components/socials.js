@@ -60,10 +60,14 @@ const SocialsIcon = styled.a`
   font-weight: 1000;
   margin: 0px 10px;
   padding: 0px;
-  
+  cursor: pointer;
+
   &:hover {
-    cursor: pointer;
     scale: 1.1;
+  }
+
+  &:active {
+    scale: 0.9;
   }
 }
 `

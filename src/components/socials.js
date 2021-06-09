@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const Socials = ({ siteTitle }) => (
+const Socials = () => (
   <SocialsContainer>
     <SocialsIcon href="https://www.facebook.com/FourAcesGuitarQuartet">
       <StaticImage

@@ -1,13 +1,11 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import PageNavBar from "./pageNavBar"
 
 const PageHeader = () => (
   <PageHeaderContainer>
-    <HomeTitle>FOUR ACES</HomeTitle>
+    <HeaderTitle>FOUR ACES</HeaderTitle>
     <PageNavBar></PageNavBar>
     <div className="pageHeaderImg">
         <StaticImage 
@@ -22,7 +20,7 @@ const PageHeaderContainer = styled.div`
     
 `
 
-const HomeTitle = styled.div`
+const HeaderTitle = styled.div`
   width: 100vw;
   font-weight: 1000;
   text-align : center;
@@ -33,7 +31,7 @@ const HomeTitle = styled.div`
   left: 0;
 
   @media screen and (min-width: 992px){
-    font-size: 112px;
+    font-size: 75px;
     top: 20px;
   }
 `

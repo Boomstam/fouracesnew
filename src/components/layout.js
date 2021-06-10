@@ -40,5 +40,5 @@ export default Layout
 
 const Main = styled.main`
 {
-  color: var(--textColor);
+  color: var(--whiteText);
 }`

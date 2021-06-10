@@ -2,7 +2,8 @@
     --titleFontSize: 120px;
     --subTitleFontSize: 60px;
     --navBarFontSize: 20px;
-    --textColor: white;
+    --whiteText: white;
+    --blackText: black;
     font-family: "EB Garamond";
 }
 

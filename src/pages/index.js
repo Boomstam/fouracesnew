@@ -26,7 +26,7 @@ const HomeTitle = styled.div`
   font-weight: 1000;
   text-align : center;
   position: absolute;
-  font-size: 112px;
+  font-size: 75px;
   top: 175px;
   line-height: 100px;
   left: 0;

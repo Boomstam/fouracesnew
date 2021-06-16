@@ -1,5 +1,4 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -13,14 +12,14 @@ const links = {
     contact: "/contact",
 }
 
-const HomeNavBar = () => (
+const Navbar = ({navTop}) => (
   <Nav>
       <Hamburger>
             <Bun></Bun>
             <Bun></Bun>
             <Bun></Bun>
         </Hamburger>
-    <NavContainer>
+    <NavContainer style={{top: navTop}}>
         <NavItem to={links.home}>HOME</NavItem>
         <NavItem to={links.music}>MUSIC</NavItem>
         <NavItem to={links.media}>MEDIA</NavItem>
@@ -32,7 +31,7 @@ const HomeNavBar = () => (
   </Nav>
 )
 
-export default HomeNavBar
+export default Navbar
 
 const Nav = styled.div`
     
@@ -75,7 +74,7 @@ const NavContainer = styled.nav`
     position: absolute;
     font-size: var(--navBarFontSize);
     font-weight: 1000;    
-    top: 450px;
+    
     display: none;
 
     @media screen and (min-width: 992px){

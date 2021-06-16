@@ -2,6 +2,9 @@ module.exports = {
   siteMetadata: {
     title: "Four Aces Guitar Quartet",
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     "gatsby-plugin-styled-components",
     `gatsby-plugin-emotion`,

@@ -2,12 +2,11 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import Layout from "../components/layout"
-import { css } from "@emotion/react"
-import HomeNavBar from "../components/homeNavBar"
+import Navbar from "../components/navbar"
 
 const IndexPage = () => (
   <Layout>
-    <HomeNavBar></HomeNavBar>
+    <Navbar navTop="450px"></Navbar>
     <div className="homeImgContainer">
       <StaticImage 
         src="../images/homeImage.jpg"

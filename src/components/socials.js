@@ -1,7 +1,5 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
 const Socials = () => (

@@ -1,21 +1,23 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import PageNavBar from "./pageNavBar"
+import Navbar from "./navbar"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const PageHeader = () => (
+const PageHeader = ({imageFile}) => (
   <PageHeaderContainer>
     <HeaderTitle>FOUR ACES</HeaderTitle>
-    <PageNavBar></PageNavBar>
+    <Navbar navTop="150px"></Navbar>
     <div className="pageHeaderImg">
-        <StaticImage 
-        src="../images/pageHeader.jpg"
-        alt="Header image"
-        />
+      <GatsbyImage image={imageFile} alt="Music Image" />
     </div>
   </PageHeaderContainer>
 )
-
+/*
+<StaticImage 
+  src="../images/pageHeader.jpg"
+  alt="Header image"
+/>*/
 const PageHeaderContainer = styled.div`
     
 `

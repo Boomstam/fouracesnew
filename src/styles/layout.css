@@ -37,11 +37,12 @@
 }
 
 .dropdown:hover .dropdown-value-container {
-    display: block;
+    display: flex;
 }
 
 .dropdown-value-container {
     display: none;
+    flex-direction: column;
 }
 
 

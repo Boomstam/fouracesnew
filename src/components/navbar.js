@@ -28,7 +28,7 @@ const Navbar = ({navTop}) => (
         <NavItem to={links.home}>HOME</NavItem>
         <Dropdown className="dropdown">
             <DropdownPlaceholder className="dropdown-placeholder">
-                Music
+                MUSIC
             </DropdownPlaceholder>
             <DropdownValueContainer className="dropdown-value-container">
                 <NavItem to={links.planBE}>PlanBE</NavItem>
@@ -100,10 +100,25 @@ const NavContainer = styled.nav`
 
 const Dropdown = styled.div`
     flex-grow: 1;
+    width: 100px;
 `
 
 const DropdownPlaceholder = styled.div`
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: border 100ms, scale 100ms;
 
+    &:hover {
+        border-style: double;
+        border-color: rgba(255, 255, 255, 0.5);
+        border-width: 2px 0px;
+        cursor: pointer;
+    }
+
+    &:active {
+        scale: 0.9;
+    }
 `
 
 const DropdownValueContainer = styled.div`

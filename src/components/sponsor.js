@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 const Sponsor = () => (
   <SponsorContainer>
-    <RoundedCornersPreventor>
       <SponsorIcon href="https://www.savarez.com/four-aces-guitar-quartet" target="_blank">
         <StaticImage
           src="../images/savarez.jpg"
@@ -12,7 +11,6 @@ const Sponsor = () => (
           alt="Savarez"
         />
       </SponsorIcon>
-    </RoundedCornersPreventor>
   </SponsorContainer>
 )
 
@@ -41,7 +39,3 @@ const SponsorIcon = styled.a`
   }
 }
 `
-
-const RoundedCornersPreventor = styled.div`
-{
-}`

@@ -21,7 +21,7 @@ function Odyssee({ data }) {
 export const pageQuery = graphql`
   query {
     allFile (filter:{ relativePath:{ in:[
-            "odyssee.jpg"
+            "odyssee-darker.jpg"
             ]} }){
            edges {
              node {

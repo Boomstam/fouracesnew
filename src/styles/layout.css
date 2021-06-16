@@ -38,6 +38,10 @@ a div picture img {
     border: 1px solid white;
 }
 
+.social-img {
+    border-radius: 0 !important;
+}
+
 
 /* Reset HTML */
 

@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
+import Sponsor from "../components/sponsor"
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +16,7 @@ const IndexPage = () => (
       </div>
     <HomeTitle>FOUR ACES</HomeTitle>
     <HomeSubTitle>Guitar Quartet</HomeSubTitle>
+    <Sponsor></Sponsor>
   </Layout>
 )
 

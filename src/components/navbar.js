@@ -26,11 +26,11 @@ const Navbar = ({navTop}) => (
         </Hamburger>
     <NavContainer style={{top: navTop}}>
         <NavItem to={links.home}>HOME</NavItem>
-        <Dropdown class="dropdown">
-            <DropdownPlaceholder class="dropdown-placeholder">
+        <Dropdown className="dropdown">
+            <DropdownPlaceholder className="dropdown-placeholder">
                 Music
             </DropdownPlaceholder>
-            <DropdownValueContainer class="dropdown-value-container">
+            <DropdownValueContainer className="dropdown-value-container">
                 <NavItem to={links.planBE}>PlanBE</NavItem>
                 <NavItem to={links.tabulaRasa}>Tabula Rasa</NavItem>
                 <NavItem to={links.fullHouse}>Full House</NavItem>

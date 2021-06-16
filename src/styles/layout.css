@@ -30,14 +30,22 @@
 @media screen and (min-width: 992px) {}
 
 
+/* Dropdown */
+
+.dropdown:hover .dropdown-placeholder {
+    display: none;
+}
+
+.dropdown:hover .dropdown-value-container {
+    display: block;
+}
+
+.dropdown-value-container {
+    display: none;
+}
+
+
 /* Social Media Icons */
-
-
-/*a>div>picture>img {
-    background-color: white;
-    border-radius: 20px;
-    border: 1px solid white;
-}*/
 
 .social-img img {
     background-color: white;

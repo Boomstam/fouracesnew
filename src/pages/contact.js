@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
 function Contact({ data }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);

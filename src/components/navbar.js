@@ -101,6 +101,7 @@ const NavContainer = styled.nav`
 const Dropdown = styled.div`
     flex-grow: 1;
     width: 100px;
+    z-index: 1;
 `
 
 const DropdownPlaceholder = styled.div`
@@ -122,7 +123,7 @@ const DropdownPlaceholder = styled.div`
 `
 
 const DropdownValueContainer = styled.div`
-    
+    background-color: grey;
 `
 
 const NavItem = styled(Link)`

@@ -32,14 +32,17 @@
 
 /* Social Media Icons */
 
-a div picture img {
+
+/*a>div>picture>img {
     background-color: white;
     border-radius: 20px;
     border: 1px solid white;
-}
+}*/
 
-.social-img {
-    border-radius: 0 !important;
+.social-img img {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
 }
 
 

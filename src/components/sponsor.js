@@ -4,14 +4,15 @@ import styled from "styled-components"
 
 const Sponsor = () => (
   <SponsorContainer>
-    <SponsorIcon href="https://www.savarez.com/four-aces-guitar-quartet" target="_blank">
-      <StaticImage
-        src="../images/savarez.jpg"
-        width={64}
-        alt="Savarez"
-        class="social-img"
-      />
-    </SponsorIcon>
+    <RoundedCornersPreventor>
+      <SponsorIcon href="https://www.savarez.com/four-aces-guitar-quartet" target="_blank">
+        <StaticImage
+          src="../images/savarez.jpg"
+          width={64}
+          alt="Savarez"
+        />
+      </SponsorIcon>
+    </RoundedCornersPreventor>
   </SponsorContainer>
 )
 
@@ -40,3 +41,7 @@ const SponsorIcon = styled.a`
   }
 }
 `
+
+const RoundedCornersPreventor = styled.div`
+{
+}`

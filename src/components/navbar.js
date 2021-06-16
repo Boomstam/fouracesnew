@@ -26,11 +26,11 @@ const Navbar = ({navTop}) => (
         </Hamburger>
     <NavContainer style={{top: navTop}}>
         <NavItem to={links.home}>HOME</NavItem>
-        <Dropdown>
-            <DropdownPlaceholder>
+        <Dropdown class="dropdown">
+            <DropdownPlaceholder class="dropdown-placeholder">
                 Music
             </DropdownPlaceholder>
-            <DropdownValueContainer>
+            <DropdownValueContainer class="dropdown-value-container">
                 <NavItem to={links.planBE}>PlanBE</NavItem>
                 <NavItem to={links.tabulaRasa}>Tabula Rasa</NavItem>
                 <NavItem to={links.fullHouse}>Full House</NavItem>
@@ -103,7 +103,7 @@ const Dropdown = styled.div`
 `
 
 const DropdownPlaceholder = styled.div`
-    
+
 `
 
 const DropdownValueContainer = styled.div`

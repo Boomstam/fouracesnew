@@ -18,15 +18,15 @@ function Contact({ data }) {
   )
 }
 
-export const contactQuery = graphql`
+export const pageQuery = graphql`
   query {
     allFile (filter:{ relativePath:{ in:[
-            "logo.png"
+            "logo-darker.png"
             ]} }){
            edges {
              node {
               childImageSharp{
-                gatsbyImageData(width: 4934)
+                gatsbyImageData(width: 2000)
               }
             }
          }

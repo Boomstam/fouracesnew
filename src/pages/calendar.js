@@ -1,17 +1,37 @@
 import React from 'react'
-import Layout from '../components/layout'
 import PageHeader from '../components/pageHeader'
-//de2aikh7oknjsbhhc889m40nss@group.calendar.google.com
+import Layout from '../components/layout'
+import PageContent from '../components/pageContent'
+import { graphql } from 'gatsby'
+import { getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
-export default class Calendar extends React.Component
-{
-      render()
-      {
-          return(
-              <Layout>
-                <PageHeader></PageHeader>
-                <div>Calendar</div>
-            </Layout>
-          )
-      }
+function Calendar({ data }) {
+  const image = getImage(data.allFile.edges[0].node.childImageSharp);
+  return (
+    <Layout>
+      <PageHeader imageFile={image}></PageHeader>
+      <PageContent>
+      Calendar
+      </PageContent>
+    </Layout>
+  )
 }
+
+export const pageQuery = graphql`
+  query {
+    allFile (filter:{ relativePath:{ in:[
+            "calendar.jpg"
+            ]} }){
+           edges {
+             node {
+              childImageSharp{
+                gatsbyImageData(width: 2000)
+              }
+            }
+         }
+      }
+  }
+`
+
+export default Calendar

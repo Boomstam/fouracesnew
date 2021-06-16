@@ -18,7 +18,7 @@ function Music({ data }) {
   )
 }
 
-export const musicQuery = graphql`
+export const pageQuery = graphql`
   query {
     allFile (filter:{ relativePath:{ in:[
             "music.jpg"
@@ -26,7 +26,7 @@ export const musicQuery = graphql`
            edges {
              node {
               childImageSharp{
-                gatsbyImageData(width: 4934)
+                gatsbyImageData(width: 2000)
               }
             }
          }

@@ -5,6 +5,11 @@ import styled from "styled-components"
 const links = {
     home: "/",
     music: "/music",
+    planBE: "/planBE",
+    tabulaRasa: "/tabulaRasa",
+    fullHouse: "/fullHouse",
+    forAces: "/forAces",
+    odyssee: "/odyssee",
     media: "/media",
     calendar: "/calendar",
     store: "/store",
@@ -21,11 +26,22 @@ const Navbar = ({navTop}) => (
         </Hamburger>
     <NavContainer style={{top: navTop}}>
         <NavItem to={links.home}>HOME</NavItem>
-        <NavItem to={links.music}>MUSIC</NavItem>
+        <Dropdown>
+            <DropdownPlaceholder>
+                Music
+            </DropdownPlaceholder>
+            <DropdownValueContainer>
+                <NavItem to={links.planBE}>PlanBE</NavItem>
+                <NavItem to={links.tabulaRasa}>Tabula Rasa</NavItem>
+                <NavItem to={links.fullHouse}>Full House</NavItem>
+                <NavItem to={links.forAces}>For Aces</NavItem>
+                <NavItem to={links.odyssee}>Odyssee</NavItem>
+            </DropdownValueContainer>
+        </Dropdown>
+        <NavItem to={links.about}>ABOUT</NavItem>
         <NavItem to={links.media}>MEDIA</NavItem>
         <NavItem to={links.calendar}>CALENDAR</NavItem>
         <NavItem to={links.store}>STORE</NavItem>
-        <NavItem to={links.about}>ABOUT</NavItem>
         <NavItem to={links.contact}>CONTACT</NavItem>
     </NavContainer>
   </Nav>
@@ -80,6 +96,18 @@ const NavContainer = styled.nav`
     @media screen and (min-width: 992px){
         display: flex;
     }
+`
+
+const Dropdown = styled.div`
+    flex-grow: 1;
+`
+
+const DropdownPlaceholder = styled.div`
+    
+`
+
+const DropdownValueContainer = styled.div`
+    
 `
 
 const NavItem = styled(Link)`

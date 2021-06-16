@@ -22,7 +22,7 @@ function About({ data }) {
   )
 }
 
-export const aboutQuery = graphql`
+export const pageQuery = graphql`
   query {
     allFile (filter:{ relativePath:{ in:[
             "about.jpg"
@@ -30,7 +30,7 @@ export const aboutQuery = graphql`
            edges {
              node {
               childImageSharp{
-                gatsbyImageData(width: 4934)
+                gatsbyImageData(width: 2000)
               }
             }
          }

@@ -1,16 +1,36 @@
 import React from 'react'
-import Layout from '../components/layout'
 import PageHeader from '../components/pageHeader'
+import Layout from '../components/layout'
+import PageContent from '../components/pageContent'
+import { graphql } from 'gatsby'
+import { getImage } from "gatsby-plugin-image"
 
-export default class Contact extends React.Component
-{
-      render()
-      {
-          return(
-              <Layout>
-                <PageHeader></PageHeader>
-                <div>Contact</div>
-            </Layout>
-          )
-      }
+function Contact({ data }) {
+  const image = getImage(data.allFile.edges[0].node.childImageSharp);
+  return (
+    <Layout>
+      <PageHeader imageFile={image}></PageHeader>
+      <PageContent>
+        Contact
+      </PageContent>
+    </Layout>
+  )
 }
+
+export const contactQuery = graphql`
+  query {
+    allFile (filter:{ relativePath:{ in:[
+            "logo.png"
+            ]} }){
+           edges {
+             node {
+              childImageSharp{
+                gatsbyImageData(width: 4934)
+              }
+            }
+         }
+      }
+  }
+`
+
+export default Contact

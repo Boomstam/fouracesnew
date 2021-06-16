@@ -2,8 +2,8 @@ import React from 'react'
 import PageHeader from '../components/pageHeader'
 import Layout from '../components/layout'
 import PageContent from '../components/pageContent'
-import { StaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { graphql } from 'gatsby'
+import { getImage } from "gatsby-plugin-image"
 
 function Music({ data }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
@@ -17,7 +17,7 @@ function Music({ data }) {
   )
 }
 
-export const pageQuery = graphql`
+export const musicQuery = graphql`
   query {
     allFile (filter:{ relativePath:{ in:[
             "music.jpg"
@@ -33,4 +33,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Music;
+export default Music

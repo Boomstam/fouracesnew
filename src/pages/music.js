@@ -1,15 +1,19 @@
 import React from 'react'
-import Layout from '../components/layout'
 import PageHeader from '../components/pageHeader'
-import { StaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Layout from '../components/layout'
+import PageContent from '../components/pageContent'
+import { StaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 function Music({ data }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
   return (
-    <section>
+    <Layout>
       <PageHeader imageFile={image}></PageHeader>
-    </section>
+      <PageContent>
+        Music
+      </PageContent>
+    </Layout>
   )
 }
 

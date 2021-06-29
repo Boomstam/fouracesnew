@@ -5,6 +5,7 @@ import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 
 function Store({ data }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
@@ -12,7 +13,48 @@ function Store({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-      Store
+      <Product>
+          <StaticImage
+            src="../images/products/TabulaRasa.jpg"
+            width={150}
+            alt="Puzzle"
+          />
+          <ProductText>
+            Tabula Rasa
+          </ProductText>
+        </Product>
+      <Products>
+        <Product>
+          <StaticImage
+            src="../images/products/ForAces.jpg"
+            width={150}
+            alt="Puzzle"
+          />
+          <ProductText>
+            For Aces
+          </ProductText>
+        </Product>
+        <Product>
+          <StaticImage
+            src="../images/products/Odyssee.jpg"
+            width={150}
+            alt="Puzzle"
+          />
+          <ProductText>
+            Odyssee
+          </ProductText>
+        </Product>
+        <Product>
+          <StaticImage
+            src="../images/products/Puzzle.png"
+            width={150}
+            alt="Puzzle"
+          />
+          <ProductText>
+            Een puzzel
+          </ProductText>
+        </Product>
+      </Products>
       </PageContent>
     </Layout>
   )
@@ -32,6 +74,20 @@ export const pageQuery = graphql`
          }
       }
   }
+`
+
+const Products = styled.div`
+
+`
+
+const Product = styled.div`
+  display: flex;
+  margin: 50px;
+
+`
+
+const ProductText = styled.div`
+  margin: 100px;
 `
 
 export default Store

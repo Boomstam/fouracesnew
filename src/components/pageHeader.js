@@ -6,14 +6,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PageHeader = ({imageFile}) => (
   <PageHeaderContainer>
-    <HeaderTitle>FOUR ACES</HeaderTitle>
+    
     <Navbar navTop="150px"></Navbar>
     <div className="pageHeaderImg">
       <GatsbyImage image={imageFile} alt="Music Image" />
     </div>
   </PageHeaderContainer>
 )
-
+/* <HeaderTitle>FOUR ACES</HeaderTitle> */
 const PageHeaderContainer = styled.div`
 
 `

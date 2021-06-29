@@ -12,7 +12,32 @@ function Media({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-      Media
+        <VideoList>
+          <Video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_wCeIEYfH94">
+            </iframe>
+          </Video>
+          <Video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BjyUOSm5Q48">
+            </iframe>
+          </Video>
+          <Video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/L8oE-3jONqA">
+            </iframe>
+          </Video>
+          <Video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GYoOzoOu6io">
+            </iframe>
+          </Video>
+          <Video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/H8BaeRGGvn4">
+            </iframe>
+          </Video>
+          <Video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BjyUOSm5Q48">
+            </iframe>
+          </Video>
+        </VideoList>
       </PageContent>
     </Layout>
   )
@@ -32,6 +57,16 @@ export const pageQuery = graphql`
          }
       }
   }
+`
+
+const VideoList = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
+
+const Video = styled.div`
+  margin: 50px;
+  height: 300px;
 `
 
 export default Media

@@ -12,7 +12,7 @@ function PlanBE({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-      PlanBE
+        PlanBE
       </PageContent>
     </Layout>
   )

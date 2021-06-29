@@ -13,6 +13,7 @@ const PageContentContainer = styled.div`
     color: var(--blackText);
     left: 10vw;
     width: 80vw;
+    padding: 50px 0px 100px;
 `
 
 export default PageContent

@@ -2,6 +2,7 @@ import React from 'react'
 import PageHeader from '../components/pageHeader'
 import Layout from '../components/layout'
 import PageContent from '../components/pageContent'
+import CalendarLoader from '../components/calendarLoader'
 import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
@@ -12,7 +13,7 @@ function Calendar({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-      Calendar
+        <CalendarLoader/>
       </PageContent>
     </Layout>
   )

@@ -13,48 +13,56 @@ function Store({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-      <Product>
-          <StaticImage
-            src="../images/products/TabulaRasa.jpg"
-            width={150}
-            alt="Puzzle"
-          />
-          <ProductText>
-            Tabula Rasa
-          </ProductText>
-        </Product>
-      <Products>
-        <Product>
-          <StaticImage
-            src="../images/products/ForAces.jpg"
-            width={150}
-            alt="Puzzle"
-          />
-          <ProductText>
-            For Aces
-          </ProductText>
-        </Product>
-        <Product>
-          <StaticImage
-            src="../images/products/Odyssee.jpg"
-            width={150}
-            alt="Puzzle"
-          />
-          <ProductText>
-            Odyssee
-          </ProductText>
-        </Product>
-        <Product>
-          <StaticImage
-            src="../images/products/Puzzle.png"
-            width={150}
-            alt="Puzzle"
-          />
-          <ProductText>
-            Een puzzel
-          </ProductText>
-        </Product>
-      </Products>
+        <Products>
+          <CDs>
+            <Product>
+              <ProductImage>
+                <StaticImage
+                  src="../images/products/TabulaRasa.jpg"
+                  width={150}
+                  alt="Puzzle"
+                />
+              </ProductImage>
+              <ProductText>
+                Tabula Rasa
+              </ProductText>
+            </Product>
+            <Product>
+              <ProductImage>
+                <StaticImage
+                  src="../images/products/ForAces.jpg"
+                  width={150}
+                  alt="Puzzle"
+                />
+              </ProductImage>
+              <ProductText>
+                For Aces
+              </ProductText>
+            </Product>
+            <Product>
+              <ProductImage>
+                <StaticImage
+                  src="../images/products/Odyssee.jpg"
+                  width={150}
+                  alt="Puzzle"
+                />
+              </ProductImage>
+              <ProductText>
+                Odyssee
+              </ProductText>
+            </Product>
+          </CDs>
+          <Product>
+            <StaticImage
+              src="../images/products/Puzzle.png"
+              width={150}
+              alt="Puzzle"
+            />
+            <ProductText>
+              Een puzzel
+            </ProductText>
+          </Product>
+        </Products>
       </PageContent>
     </Layout>
   )
@@ -80,14 +88,22 @@ const Products = styled.div`
 
 `
 
-const Product = styled.div`
+const CDs = styled.div`
   display: flex;
-  margin: 50px;
+`
 
+const Product = styled.div`
+  margin: 50px;
+  cursor: pointer;
+`
+
+const ProductImage = styled.div`
+  margin-left: 60px;
 `
 
 const ProductText = styled.div`
   margin: 100px;
+  text-align: center;
 `
 
 export default Store

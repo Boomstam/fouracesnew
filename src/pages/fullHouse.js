@@ -30,6 +30,10 @@ function FullHouse({ data }) {
           Full House - de terminologie doet het al vermoeden - is  steevast gericht op het brede publiek. Deze avond met een verrassend gekruide wereldkeuken zal u vast smaken!
           </Paragraph>
         </MusicContent>
+        <Trailer>
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KTUvOzge5jg">
+          </iframe>
+        </Trailer>
         <ProgramContent>
           <Title>Programma Full House</Title>
           <ProgramTitle>
@@ -125,6 +129,12 @@ const Title = styled.h1`
 
 const Paragraph = styled.p`
 
+`
+
+const Trailer = styled.div`
+  width: 80%;
+  height: 500px;
+  margin: 50px 10%;
 `
 
 const ProgramContent = styled.div`

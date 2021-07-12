@@ -27,6 +27,10 @@ function PlanBE({ data }) {
           Azen van bij ons, muziek van ons.
           </Paragraph>
         </MusicContent>
+        <Trailer>
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GKU-e_NipJw">
+          </iframe>
+        </Trailer>
         <ProgramContent>
           <Title>Programma Plan BE</Title>
           <ProgramTitle>
@@ -155,6 +159,12 @@ const Title = styled.h1`
 
 const Paragraph = styled.p`
 
+`
+
+const Trailer = styled.div`
+  width: 80%;
+  height: 500px;
+  margin: 50px 10%;
 `
 
 const ProgramContent = styled.div`

@@ -39,13 +39,25 @@ const Navbar = ({navTop}) => (
             </DropdownValueContainer>
         </Dropdown>
         <NavItem to={links.about}>ABOUT</NavItem>
-        <NavItem to={links.media}>MEDIA</NavItem>
+        <Dropdown className="dropdown">
+            <DropdownPlaceholder className="dropdown-placeholder">
+                MEDIA
+            </DropdownPlaceholder>
+            <DropdownValueContainer className="dropdown-value-container">
+                <NavItem to={links.media} state={{ program: "planBE" }}>PlanBE</NavItem>
+                <NavItem to={links.media} state={{ program: "tabulaRasa" }}>Tabula Rasa</NavItem>
+                <NavItem to={links.media} state={{ program: "fullHouse" }}>Full House</NavItem>
+                <NavItem to={links.media} state={{ program: "forAces" }}>For Aces</NavItem>
+                <NavItem to={links.media} state={{ program: "odyssee" }}>Odyssee</NavItem>
+            </DropdownValueContainer>
+        </Dropdown>
         <NavItem to={links.calendar}>CALENDAR</NavItem>
         <NavItem to={links.store}>STORE</NavItem>
         <NavItem to={links.contact}>CONTACT</NavItem>
     </NavContainer>
   </Nav>
 )
+/*<NavItem to={links.media}>MEDIA</NavItem>*/
 
 export default Navbar
 

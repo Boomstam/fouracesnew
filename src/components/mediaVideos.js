@@ -3,11 +3,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 
-
+/*{console.log(data)}
+    {console.log(data.videoIDs[0])}*/
 const MediaVideos = (data) => (
   <MediaVideosContainer>
-    {console.log(data)}
-    {console.log(data.videoIDs[0])}
     <VideoList>
         <Video>
             <iframe width="100%" height="100%" src={"https://www.youtube.com/embed/" + data.videoIDs[0]}>

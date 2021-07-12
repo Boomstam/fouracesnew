@@ -17,8 +17,8 @@ const mediaVideoIDs = {
 
 function Media({ data, location }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
-  console.log(location.state.program);
-  console.log(mediaVideoIDs[location.state.program]);
+  /*console.log(location.state.program);
+  console.log(mediaVideoIDs[location.state.program]);*/
   return (
     <Layout>
       <PageHeader imageFile={image}></PageHeader>

@@ -17,16 +17,6 @@ const mediaVideoIDs = {
 
 function Media({ data, location }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
-  if(location.state === undefined){
-    return(
-      <Layout>
-      <PageHeader imageFile={image}></PageHeader>
-      <PageContent>
-        <MediaVideos videoIDs={mediaVideoIDs[0]}></MediaVideos>
-      </PageContent>
-    </Layout>
-    )
-  }
   console.log(location.state.program);
   console.log(mediaVideoIDs[location.state.program]);
   return (

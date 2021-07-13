@@ -2,9 +2,6 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-/*{console.log(data)}
-    {console.log(data.videoIDs[0])}*/
-
 const MediaVideos = (data) => (
   <MediaVideosContainer>
     <VideoList>

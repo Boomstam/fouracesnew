@@ -8,33 +8,40 @@ import MediaVideos from '../components/mediaVideos'
 import styled from "styled-components"
 
 const mediaVideoIDs = {
-  planBE: ["f_KVwfSX_Q0", "YZSYr6PqRHQ", "29CVuhNsneI"],
-  tabulaRasa: ["7UqDjE_T9iY", "7UqDjE_T9iY", "7UqDjE_T9iY"],
-  odyssee: ["Xdv4mpHB5cs", "dQoONOKYQGM", "Zw0SXjR8N4k"],
-  forAces: ["wCeIEYfH94", "BjyUOSm5Q48", "YnNCDc48aak"],
-  fullHouse: ["0ybyN0dnekw", "9UfQ_w6fkgs", "w4JTnC_kk1o"]
+  Plan_BE: ["f_KVwfSX_Q0", "YZSYr6PqRHQ", "29CVuhNsneI"],
+  Tabula_Rasa: ["7UqDjE_T9iY", "7UqDjE_T9iY", "7UqDjE_T9iY"],
+  Odyssee: ["Xdv4mpHB5cs", "dQoONOKYQGM", "Zw0SXjR8N4k"],
+  For_Aces: ["wCeIEYfH94", "BjyUOSm5Q48", "YnNCDc48aak"],
+  Full_House: ["0ybyN0dnekw", "9UfQ_w6fkgs", "w4JTnC_kk1o"]
 }
 
 function Media({ data, location }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
-  /*console.log(location.state.program);
-  console.log(mediaVideoIDs[location.state.program]);*/
   return (
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-        <MediaVideos videoIDs={programName(location)}></MediaVideos>
+        <MediaTitle>{getProgramName(location, true)}</MediaTitle>
+        <MediaVideos videoIDs={getVideoIDs(location)}></MediaVideos>
       </PageContent>
     </Layout>
   )
 }
 
-const programName = (location) => {
+const getVideoIDs = (location) => {
+  const programName = getProgramName(location);
+  return mediaVideoIDs[programName];
+}
+
+const getProgramName = (location, displayFormat) => {
   if(location === undefined || location === null ||
     location.state === undefined || location.state === null){
-    return mediaVideoIDs[0];
+    return "planBE";
   }
-  return mediaVideoIDs[location.state.program];
+  if(displayFormat == false){
+    return location.state.program;
+  }
+  return location.state.program.split("_").join(" ");
 }
 
 export const pageQuery = graphql`
@@ -55,45 +62,7 @@ export const pageQuery = graphql`
 
 export default Media
 
-
-/*
-<VideoList>
-          <Video>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_wCeIEYfH94">
-            </iframe>
-          </Video>
-          <Video>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BjyUOSm5Q48">
-            </iframe>
-          </Video>
-          <Video>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/L8oE-3jONqA">
-            </iframe>
-          </Video>
-          <Video>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GYoOzoOu6io">
-            </iframe>
-          </Video>
-          <Video>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/H8BaeRGGvn4">
-            </iframe>
-          </Video>
-          <Video>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BjyUOSm5Q48">
-            </iframe>
-          </Video>
-        </VideoList>
-
-
-
-const VideoList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+const MediaTitle = styled.h1`
+  width: 100%;
+  text-align: center;
 `
-
-const Video = styled.div`
-  margin: 50px;
-  height: 300px;
-`
-
-*/

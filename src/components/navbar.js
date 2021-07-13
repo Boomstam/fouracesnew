@@ -28,36 +28,35 @@ const Navbar = ({navTop}) => (
         <NavItem to={links.home}>HOME</NavItem>
         <Dropdown className="dropdown">
             <DropdownPlaceholder className="dropdown-placeholder">
-                MUSIC
+                MUZIEK
             </DropdownPlaceholder>
             <DropdownValueContainer className="dropdown-value-container">
-                <NavItem to={links.planBE}>PlanBE</NavItem>
+                <NavItem to={links.planBE}>Plan BE</NavItem>
                 <NavItem to={links.tabulaRasa}>Tabula Rasa</NavItem>
                 <NavItem to={links.fullHouse}>Full House</NavItem>
                 <NavItem to={links.forAces}>For Aces</NavItem>
                 <NavItem to={links.odyssee}>Odyssee</NavItem>
             </DropdownValueContainer>
         </Dropdown>
-        <NavItem to={links.about}>ABOUT</NavItem>
+        <NavItem to={links.about}>OVER ONS</NavItem>
         <Dropdown className="dropdown">
             <DropdownPlaceholder className="dropdown-placeholder">
                 MEDIA
             </DropdownPlaceholder>
             <DropdownValueContainer className="dropdown-value-container">
-                <NavItem to={links.media} state={{ program: "planBE" }}>PlanBE</NavItem>
-                <NavItem to={links.media} state={{ program: "tabulaRasa" }}>Tabula Rasa</NavItem>
-                <NavItem to={links.media} state={{ program: "fullHouse" }}>Full House</NavItem>
-                <NavItem to={links.media} state={{ program: "forAces" }}>For Aces</NavItem>
-                <NavItem to={links.media} state={{ program: "odyssee" }}>Odyssee</NavItem>
+                <NavItem to={links.media} state={{ program: "Plan_BE" }}>Plan BE</NavItem>
+                <NavItem to={links.media} state={{ program: "Tabula_Rasa" }}>Tabula Rasa</NavItem>
+                <NavItem to={links.media} state={{ program: "Full_House" }}>Full House</NavItem>
+                <NavItem to={links.media} state={{ program: "For_Aces" }}>For Aces</NavItem>
+                <NavItem to={links.media} state={{ program: "Odyssee" }}>Odyssee</NavItem>
             </DropdownValueContainer>
         </Dropdown>
-        <NavItem to={links.calendar}>CALENDAR</NavItem>
-        <NavItem to={links.store}>STORE</NavItem>
+        <NavItem to={links.calendar}>AGENDA</NavItem>
+        <NavItem to={links.store}>WINKEL</NavItem>
         <NavItem to={links.contact}>CONTACT</NavItem>
     </NavContainer>
   </Nav>
 )
-/*<NavItem to={links.media}>MEDIA</NavItem>*/
 
 export default Navbar
 

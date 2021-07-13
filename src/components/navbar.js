@@ -27,28 +27,26 @@ const Navbar = ({navTop}) => (
     <NavContainer style={{top: navTop}}>
         <NavItem to={links.home}>HOME</NavItem>
         <Dropdown className="dropdown">
-            <DropdownPlaceholder className="dropdown-placeholder">
-                MUZIEK
-            </DropdownPlaceholder>
+            <DropdownPlaceholder className="dropdown-placeholder">MUZIEK</DropdownPlaceholder>
             <DropdownValueContainer className="dropdown-value-container">
-                <NavItem to={links.planBE}>Plan BE</NavItem>
-                <NavItem to={links.tabulaRasa}>Tabula Rasa</NavItem>
-                <NavItem to={links.fullHouse}>Full House</NavItem>
-                <NavItem to={links.forAces}>For Aces</NavItem>
-                <NavItem to={links.odyssee}>Odyssee</NavItem>
+                <ActivePlaceholder>MUZIEK</ActivePlaceholder>
+                <DropdownLink to={links.planBE}>Plan BE</DropdownLink>
+                <DropdownLink to={links.tabulaRasa}>Tabula Rasa</DropdownLink>
+                <DropdownLink to={links.fullHouse}>Full House</DropdownLink>
+                <DropdownLink to={links.forAces}>For Aces</DropdownLink>
+                <DropdownLink to={links.odyssee}>Odyssee</DropdownLink>
             </DropdownValueContainer>
         </Dropdown>
         <NavItem to={links.about}>OVER ONS</NavItem>
         <Dropdown className="dropdown">
-            <DropdownPlaceholder className="dropdown-placeholder">
-                MEDIA
-            </DropdownPlaceholder>
+            <DropdownPlaceholder className="dropdown-placeholder">MEDIA</DropdownPlaceholder>
             <DropdownValueContainer className="dropdown-value-container">
-                <NavItem to={links.media} state={{ program: "Plan_BE" }}>Plan BE</NavItem>
-                <NavItem to={links.media} state={{ program: "Tabula_Rasa" }}>Tabula Rasa</NavItem>
-                <NavItem to={links.media} state={{ program: "Full_House" }}>Full House</NavItem>
-                <NavItem to={links.media} state={{ program: "For_Aces" }}>For Aces</NavItem>
-                <NavItem to={links.media} state={{ program: "Odyssee" }}>Odyssee</NavItem>
+                <ActivePlaceholder>MEDIA</ActivePlaceholder>
+                <DropdownLink to={links.media} state={{ program: "Plan_BE" }}>Plan BE</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "Tabula_Rasa" }}>Tabula Rasa</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "Full_House" }}>Full House</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "For_Aces" }}>For Aces</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "Odyssee" }}>Odyssee</DropdownLink>
             </DropdownValueContainer>
         </Dropdown>
         <NavItem to={links.calendar}>AGENDA</NavItem>
@@ -61,7 +59,7 @@ const Navbar = ({navTop}) => (
 export default Navbar
 
 const Nav = styled.div`
-    
+    text-align: center;
 `
 
 const Hamburger = styled.div`
@@ -116,6 +114,7 @@ const Dropdown = styled.div`
 `
 
 const DropdownPlaceholder = styled.div`
+    opacity: 1;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -134,7 +133,38 @@ const DropdownPlaceholder = styled.div`
 `
 
 const DropdownValueContainer = styled.div`
-    background-color: grey;
+    padding: 5px 10px 10px 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+`
+
+const ActivePlaceholder = styled.div`
+
+`
+
+const DropdownLink = styled(Link)`
+    opacity: 1;
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: none;
+    transition: border 100ms, scale 100ms;
+    border-style: double;
+    border-color: transparent;
+    border-width: 2px 0px;
+    margin-top: 10px;
+
+    &:hover {
+        border-style: double;
+        border-color: rgba(255, 255, 255, 0.5);
+        border-width: 2px 0px;
+        cursor: pointer;
+    }
+
+    &:active {
+        scale: 0.9;
+    }
 `
 
 const NavItem = styled(Link)`

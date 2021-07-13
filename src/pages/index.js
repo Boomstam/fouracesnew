@@ -7,7 +7,7 @@ import Sponsor from "../components/sponsor"
 
 const IndexPage = () => (
   <Layout>
-    <Navbar navTop="450px"></Navbar>
+    <Navbar navTop="400px"></Navbar>
     <div className="homeImgContainer">
       <StaticImage 
         src="../images/homeImage.jpg"
@@ -28,7 +28,7 @@ const HomeTitle = styled.div`
   text-align : center;
   position: absolute;
   font-size: 75px;
-  top: 175px;
+  top: 150px;
   line-height: 100px;
   left: 0;
 
@@ -43,7 +43,7 @@ const HomeSubTitle = styled.div`
   text-align : center;
   position: absolute;
   font-size: 50px;
-  top: 450px;
+  top: 425px;
   left: 0;
 
   @media screen and (min-width: 610px){

@@ -133,7 +133,8 @@ const DropdownPlaceholder = styled.div`
 `
 
 const DropdownValueContainer = styled.div`
-    padding: 5px 10px 10px 10px;
+    transform: translateY(-10px);
+    padding 10px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 1;

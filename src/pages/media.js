@@ -23,10 +23,18 @@ function Media({ data, location }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-        <MediaVideos videoIDs={mediaVideoIDs[location.state.program]}></MediaVideos>
+        <MediaVideos videoIDs={programName(location)}></MediaVideos>
       </PageContent>
     </Layout>
   )
+}
+
+const programName = (location) => {
+  if(location === undefined || location === null ||
+    location.state === undefined || location.state === null){
+    return mediaVideoIDs[0];
+  }
+  return mediaVideoIDs[location.state.program];
 }
 
 export const pageQuery = graphql`

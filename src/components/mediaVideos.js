@@ -2,27 +2,38 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-
 /*{console.log(data)}
     {console.log(data.videoIDs[0])}*/
+
 const MediaVideos = (data) => (
   <MediaVideosContainer>
     <VideoList>
         <Video>
-            <iframe width="100%" height="100%" src={"https://www.youtube.com/embed/" + data.videoIDs[0]}>
+            <iframe width="100%" height="100%" src={videoID(data, 0)}>
             </iframe>
         </Video>
         <Video>
-            <iframe width="100%" height="100%" src={"https://www.youtube.com/embed/" + data.videoIDs[1]}>
+            <iframe width="100%" height="100%" src={videoID(data, 1)}>
             </iframe>
         </Video>
         <Video>
-            <iframe width="100%" height="100%" src={"https://www.youtube.com/embed/" + data.videoIDs[2]}>
+            <iframe width="100%" height="100%" src={videoID(data, 2)}>
             </iframe>
         </Video>
     </VideoList>
   </MediaVideosContainer>
 )
+
+const youtubePrefix = "https://www.youtube.com/embed/";
+const defaultIDs = ["f_KVwfSX_Q0", "YZSYr6PqRHQ", "29CVuhNsneI"];
+
+const videoID = (data, index) => {
+  if(data === undefined || data === null ||
+    data.videoIDs === undefined || data.videoIDs === null){
+    return youtubePrefix + defaultIDs[index];
+  }
+  return youtubePrefix + data.videoIDs[index];
+}
 
 export default MediaVideos
 

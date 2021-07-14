@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PageHeader from '../components/pageHeader'
 import Layout from '../components/layout'
 import PageContent from '../components/pageContent'
@@ -9,10 +9,23 @@ import { StaticImage } from "gatsby-plugin-image"
 
 function Store({ data }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
+  const [tabulaRasa, setTabulaRasa] = useState(0);
+  const [forAces, setForAces] = useState(0);
+  const [odyssee, setOdyssee] = useState(0);
+  const [puzzel, setPuzzel] = useState(0);
+
   return (
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
+        <div>{tabulaRasa}</div>
+        <button onClick={() => setTabulaRasa(tabulaRasa + 1)}></button>
+        <div>{forAces}</div>
+        <button onClick={() => setForAces(forAces + 1)}></button>
+        <div>{odyssee}</div>
+        <button onClick={() => setOdyssee(odyssee + 1)}></button>
+        <div>{puzzel}</div>
+        <button onClick={() => setPuzzel(puzzel + 1)}></button>
         <Products>
           <CDs>
             <Product>
@@ -20,7 +33,7 @@ function Store({ data }) {
                 <StaticImage
                   src="../images/products/TabulaRasa.jpg"
                   width={150}
-                  alt="Puzzle"
+                  alt="TabulaRasa"
                 />
               </ProductImage>
               <ProductText>
@@ -32,7 +45,7 @@ function Store({ data }) {
                 <StaticImage
                   src="../images/products/ForAces.jpg"
                   width={150}
-                  alt="Puzzle"
+                  alt="ForAces"
                 />
               </ProductImage>
               <ProductText>
@@ -44,7 +57,7 @@ function Store({ data }) {
                 <StaticImage
                   src="../images/products/Odyssee.jpg"
                   width={150}
-                  alt="Puzzle"
+                  alt="Odyssee"
                 />
               </ProductImage>
               <ProductText>
@@ -59,7 +72,7 @@ function Store({ data }) {
               alt="Puzzle"
             />
             <ProductText>
-              Een puzzel
+              Puzzel
             </ProductText>
           </Product>
         </Products>
@@ -83,6 +96,8 @@ export const pageQuery = graphql`
       }
   }
 `
+
+
 
 const Products = styled.div`
 

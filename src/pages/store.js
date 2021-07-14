@@ -41,11 +41,11 @@ function Store({ data }) {
                   alt="TabulaRasa"
                 />
               </ProductImage>
-              <ProductText>CD Tabula Rasa - 20€</ProductText>
+              <ProductText>CD Tabula Rasa - {prices.tabulaRasa}€</ProductText>
               <AmountContainer>
                 <Amount>Aantal: {tabulaRasa}</Amount>
-                <AmountButton>-</AmountButton>
-                <AmountButton>+</AmountButton>
+                <AmountButton onClick={() => tabulaRasa != 0 ? setTabulaRasa(tabulaRasa - 1) : 0}>-</AmountButton>
+                <AmountButton onClick={() => setTabulaRasa(tabulaRasa + 1)}>+</AmountButton>
               </AmountContainer>
             </Product>
             <Product>
@@ -56,9 +56,12 @@ function Store({ data }) {
                   alt="ForAces"
                 />
               </ProductImage>
-              <ProductText>
-                For Aces
-              </ProductText>
+              <ProductText>For Aces - {prices.forAces}€</ProductText>
+              <AmountContainer>
+                <Amount>Aantal: {forAces}</Amount>
+                <AmountButton onClick={() => forAces != 0 ? setForAces(forAces - 1) : 0}>-</AmountButton>
+                <AmountButton onClick={() => setForAces(forAces + 1)}>+</AmountButton>
+              </AmountContainer>
             </Product>
             <Product>
               <ProductImage>
@@ -68,9 +71,12 @@ function Store({ data }) {
                   alt="Odyssee"
                 />
               </ProductImage>
-              <ProductText>
-                Odyssee
-              </ProductText>
+              <ProductText>Odyssee - {prices.odyssee}€</ProductText>
+              <AmountContainer>
+                <Amount>Aantal: {odyssee}</Amount>
+                <AmountButton onClick={() => odyssee != 0 ? setOdyssee(odyssee - 1) : 0}>-</AmountButton>
+                <AmountButton onClick={() => setOdyssee(odyssee + 1)}>+</AmountButton>
+              </AmountContainer>
             </Product>
           <Product>
             <StaticImage
@@ -78,9 +84,12 @@ function Store({ data }) {
               width={150}
               alt="Puzzle"
             />
-            <ProductText>
-              Puzzel
-            </ProductText>
+            <ProductText>Puzzel - {prices.puzzel}€</ProductText>
+            <AmountContainer>
+                <Amount>Aantal: {puzzel}</Amount>
+                <AmountButton onClick={() => puzzel != 0 ? setPuzzel(puzzel - 1) : 0}>-</AmountButton>
+                <AmountButton onClick={() => setPuzzel(puzzel + 1)}>+</AmountButton>
+              </AmountContainer>
           </Product>
         </Products>
         <StoreHeader>
@@ -148,6 +157,10 @@ const AmountButton = styled.div`
   &:hover {
     transform: translateY(5px);
   }
+
+  &:active {
+    scale: 0.9;
+}
 `
 
 const StoreHeader = styled.div`
@@ -172,6 +185,10 @@ const CheckoutButton = styled.div`
   &:hover {
     transform: translateY(5px);
   }
+
+  &:active {
+    scale: 0.9;
+}
 `
 
 export default Store

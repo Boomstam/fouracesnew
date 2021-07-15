@@ -29,7 +29,7 @@ function Media({ data, location }) {
 }
 
 const getVideoIDs = (location) => {
-  const programName = getProgramName(location);
+  const programName = getProgramName(location, false);
   return mediaVideoIDs[programName];
 }
 

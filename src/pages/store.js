@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import StoreLightBox from '../components/storeLightbox'
 
 const prices = {
   tabulaRasa: 25,
@@ -20,6 +21,7 @@ function Store({ data }) {
   const [forAces, setForAces] = useState(0);
   const [odyssee, setOdyssee] = useState(0);
   const [puzzel, setPuzzel] = useState(0);
+  const [showLightbox, setShowLightbox] = useState("hidden");
 
   const getTotal = () => {
     return (tabulaRasa * prices.tabulaRasa) +
@@ -27,6 +29,8 @@ function Store({ data }) {
       (odyssee * prices.odyssee) +
       (puzzel * prices.puzzel);
   }
+
+  const getAmounts = () => { return { tabulaRasa: tabulaRasa, forAces: forAces, odyssee: odyssee, puzzel: puzzel }; };
 
   return (
     <Layout>
@@ -38,10 +42,11 @@ function Store({ data }) {
                 <StaticImage
                   src="../images/products/TabulaRasa.jpg"
                   width={150}
+                  height={150}
                   alt="TabulaRasa"
                 />
               </ProductImage>
-              <ProductText>CD Tabula Rasa - {prices.tabulaRasa}€</ProductText>
+              <ProductText>Tabula Rasa - {prices.tabulaRasa}€</ProductText>
               <AmountContainer>
                 <Amount>Aantal: {tabulaRasa}</Amount>
                 <AmountButton onClick={() => tabulaRasa != 0 ? setTabulaRasa(tabulaRasa - 1) : 0}>-</AmountButton>
@@ -53,6 +58,7 @@ function Store({ data }) {
                 <StaticImage
                   src="../images/products/ForAces.jpg"
                   width={150}
+                  height={150}
                   alt="ForAces"
                 />
               </ProductImage>
@@ -68,6 +74,7 @@ function Store({ data }) {
                 <StaticImage
                   src="../images/products/Odyssee.jpg"
                   width={150}
+                  height={150}
                   alt="Odyssee"
                 />
               </ProductImage>
@@ -82,6 +89,7 @@ function Store({ data }) {
             <StaticImage
               src="../images/products/Puzzle.png"
               width={150}
+              height={150}
               alt="Puzzle"
             />
             <ProductText>Puzzel - {prices.puzzel}€</ProductText>
@@ -93,12 +101,18 @@ function Store({ data }) {
           </Product>
         </Products>
         <StoreHeader>
-          <CheckoutButton>Bestellen - {getTotal()},0€</CheckoutButton>
+          <CheckoutButton onClick={() => setShowLightbox("visible")}>Bestellen - {getTotal()},0€</CheckoutButton>
         </StoreHeader>
+        <StoreLightBox basket={
+          { 
+            visible: showLightbox, amounts: getAmounts(), prices: prices, total: getTotal(),
+            hideCallback() { setShowLightbox("hidden") }
+          }
+          }></StoreLightBox>
       </PageContent>
     </Layout>
   )
-}
+}//visible: ,
 
 export const pageQuery = graphql`
   query {
@@ -129,12 +143,11 @@ const Product = styled.div`
 const ProductImage = styled.div`
   
 `
-/*margin-left: 60px;*/
 
 const ProductText = styled.div`  
   text-align: center;
+  margin: 20px 0px;
 `
-/*margin: 100px;*/
 
 const AmountContainer = styled.div`
   display: flex;
@@ -188,18 +201,7 @@ const CheckoutButton = styled.div`
 
   &:active {
     scale: 0.9;
-}
+  }
 `
 
 export default Store
-
-/*
-<div>{tabulaRasa}</div>
-        <button onClick={() => setTabulaRasa(tabulaRasa + 1)}></button>
-        <div>{forAces}</div>
-        <button onClick={() => setForAces(forAces + 1)}></button>
-        <div>{odyssee}</div>
-        <button onClick={() => setOdyssee(odyssee + 1)}></button>
-        <div>{puzzel}</div>
-        <button onClick={() => setPuzzel(puzzel + 1)}></button>
-*/

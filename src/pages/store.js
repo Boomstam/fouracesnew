@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import StoreLightBox from '../components/storeLightbox'
+import StoreLightbox from '../components/storeLightbox'
 
 const prices = {
   tabulaRasa: 25,
@@ -22,6 +22,14 @@ function Store({ data }) {
   const [odyssee, setOdyssee] = useState(0);
   const [puzzel, setPuzzel] = useState(0);
   const [showLightbox, setShowLightbox] = useState("hidden");
+  const [showOrderDetails, setShowOrderDetails] = useState("block");
+  const [showCustomerDetails, setShowCustomerDetails] = useState("none");
+  
+  const placeOrder = () => {
+    setShowOrderDetails("block");
+    setShowCustomerDetails("none");
+    setShowLightbox("visible");
+  }
 
   const getTotal = () => {
     return (tabulaRasa * prices.tabulaRasa) +
@@ -30,7 +38,9 @@ function Store({ data }) {
       (puzzel * prices.puzzel);
   }
 
-  const getAmounts = () => { return { tabulaRasa: tabulaRasa, forAces: forAces, odyssee: odyssee, puzzel: puzzel }; };
+  const getAmounts = () => { 
+    return { tabulaRasa: tabulaRasa, forAces: forAces, odyssee: odyssee, puzzel: puzzel }; 
+  };
 
   return (
     <Layout>
@@ -101,18 +111,32 @@ function Store({ data }) {
           </Product>
         </Products>
         <StoreHeader>
-          <CheckoutButton onClick={() => setShowLightbox("visible")}>Bestellen - {getTotal()},0€</CheckoutButton>
+          <OrderButton onClick={() => placeOrder()}>Bestellen - {getTotal()},0€</OrderButton>
         </StoreHeader>
-        <StoreLightBox basket={
+        <StoreLightbox basket={
           { 
-            visible: showLightbox, amounts: getAmounts(), prices: prices, total: getTotal(),
-            hideCallback() { setShowLightbox("hidden") }
+            visibility: { showLightbox: showLightbox,
+                          showOrderDetails: showOrderDetails,
+                          showCustomerDetails: showCustomerDetails },
+            amounts: getAmounts(), 
+            prices: prices, 
+            total: getTotal(),
+            orderCallback() { 
+              setShowOrderDetails("none");
+              setShowCustomerDetails("block");
+            },
+            continueCallback() { 
+              setShowLightbox("hidden");
+            },
+            finishCallback() { 
+              setShowLightbox("hidden");
+            }
           }
-          }></StoreLightBox>
+          }></StoreLightbox>
       </PageContent>
     </Layout>
   )
-}//visible: ,
+}
 
 export const pageQuery = graphql`
   query {
@@ -181,7 +205,7 @@ const StoreHeader = styled.div`
   height: 100px;
 `
 
-const CheckoutButton = styled.div`
+const OrderButton = styled.div`
   margin-left: 40%;
   margin-top: 50px;
   padding-top: 10px;

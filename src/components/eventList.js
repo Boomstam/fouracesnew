@@ -78,11 +78,7 @@ const StyledEvents = styled.div`
 `
 
 const Event = styled.div`
-    
-`
-
-const Border = styled.div`
-    
+    margin-bottom: 50px;
 `
 
 const Date = styled.div`

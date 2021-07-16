@@ -13,6 +13,7 @@ function Calendar({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
+        <CalendarTitle>Concerten</CalendarTitle>
         <CalendarLoader/>
       </PageContent>
     </Layout>
@@ -36,3 +37,9 @@ export const pageQuery = graphql`
 `
 
 export default Calendar
+
+const CalendarTitle = styled.h1`
+  width: 100%;
+  text-align: center;
+  margin-bottom: 100px;
+`

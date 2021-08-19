@@ -30,7 +30,7 @@ function Odyssee({ data }) {
             Introspectie, stilte en eenvoud maken dan weer Arvo Pärts Summa zo intens waarna we herinneringen ophalen aan een buitenlands avontuur waar we Feast for Tantalus hoorden en fantaseerden dit werk ooit zelf te spelen.
           </Paragraph>
           <Paragraph>
-            Tot slot zien we onszelf samen met Antonio Banderas het kwade bestrijden in de Mexicaanse woestenij terwijl we Cancio del Mariachi uit onze gitaren knallen.
+            Tot slot zien we onszelf samen met Antonio Banderas het kwade bestrijden in de Mexicaanse woestenij terwijl we Cancion del Mariachi uit onze gitaren knallen.
             We hebben al een lange weg afgelegd, maar onze odyssee gaat verder...
           </Paragraph>
         </MusicContent>

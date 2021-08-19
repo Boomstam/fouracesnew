@@ -27,7 +27,7 @@ function About({ data }) {
 export const pageQuery = graphql`
   query {
     allFile (filter:{ relativePath:{ in:[
-            "aboutCropped.jpg"
+            "about.jpg"
             ]} }){
            edges {
              node {

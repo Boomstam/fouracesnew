@@ -32,7 +32,7 @@ function ForAces({ data }) {
           </Paragraph>
         </MusicContent>
         <Trailer>
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YnNCDc48aak">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nGNbEJ5ElYk">
           </iframe>
         </Trailer>
       </PageContent>

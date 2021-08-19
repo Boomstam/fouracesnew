@@ -43,11 +43,11 @@ const Navbar = ({navTop}) => (
             <DropdownValueContainer className="dropdown-value-container">
                 <ActivePlaceholder>MEDIA</ActivePlaceholder>
                 <DropdownLink to={links.media} state={{ program: "Plan_BE" }}>Plan BE</DropdownLink>
-                <DropdownLink to={links.media} state={{ program: "Tabula_Rasa" }}>Tabula Rasa</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "Tabu la_Rasa" }}>Tabula Rasa</DropdownLink>
                 <DropdownLink to={links.media} state={{ program: "Full_House" }}>Full House</DropdownLink>
                 <DropdownLink to={links.media} state={{ program: "For_Aces" }}>For Aces</DropdownLink>
                 <DropdownLink to={links.media} state={{ program: "Odyssee" }}>Odyssee</DropdownLink>
-                <DropdownLink to={links.media} state={{ program: "Foto's" }}>Photos</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "Photos" }}>Foto's</DropdownLink>
             </DropdownValueContainer>
         </Dropdown>
         <NavItem to={links.calendar}>AGENDA</NavItem>

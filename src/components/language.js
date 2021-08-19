@@ -15,15 +15,13 @@ const Language = () => (
 export default Language;
 
 const LanguageContainer = styled.div`
-{
     display: flex;
     position: fixed;
     left: 0;
     top: 5px;
-}`
+`
 
 const LanguageButton = styled.div`
-{
     font-size: var(--navBarFontSize);
     font-weight: 1000;
     color: white;
@@ -35,5 +33,4 @@ const LanguageButton = styled.div`
       border-width: 2px 0px;
       cursor: pointer;
   }
-}
 `

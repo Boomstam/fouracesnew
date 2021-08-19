@@ -16,22 +16,25 @@ const mediaVideoIDs = {
   Full_House: ["0ybyN0dnekw", "9UfQ_w6fkgs", "w4JTnC_kk1o"]
 }
 
+const headerImageIndex = 0;
+
 function Media({ data, location }) {
-  const image = getImage(data.allFile.edges[0].node.childImageSharp);
+  const edges = data.allFile.edges;
+  const headerImage = getImage(edges[headerImageIndex].node.childImageSharp);
   
   if(isPhotos(location)){
     return (
       <Layout>
-        <PageHeader imageFile={image}></PageHeader>
+        <PageHeader imageFile={headerImage}></PageHeader>
         <PageContent>
-          <Photos></Photos>
+          <Photos data={edges}></Photos>
         </PageContent>
       </Layout>
     )
   } else {
     return (
       <Layout>
-        <PageHeader imageFile={image}></PageHeader>
+        <PageHeader imageFile={headerImage}></PageHeader>
         <PageContent>
           <MediaTitle>{getProgramName(location, true)}</MediaTitle>
           <MediaVideos videoIDs={getVideoIDs(location)}></MediaVideos>
@@ -64,12 +67,15 @@ const getProgramName = (location, displayFormat) => {
   }
   return location.state.program.split("_").join(" ");
 }
-
+/*filter:{ 
+      relativePath:{ in:["about.jpg"]},
+      or: { relativeDirectory: { eq: "photos"} }
+      }*/
 export const pageQuery = graphql`
   query {
-    allFile (filter:{ relativePath:{ in:[
-            "media.jpg"
-            ]} }){
+    allFile (
+      filter: { relativeDirectory: { eq: "photos"} }
+    ){
            edges {
              node {
               childImageSharp{

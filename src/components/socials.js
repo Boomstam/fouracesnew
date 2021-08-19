@@ -50,16 +50,14 @@ const Socials = () => (
 export default Socials
 
 const SocialsContainer = styled.div`
-{
     display: flex;
     position: fixed;
     right: 0;
     top: 10px;
     z-index: 1;
-}`
+`
 
 const SocialsIcon = styled.a`
-{
   font-size: var(--navBarFontSize);
   font-weight: 1000;
   margin: 0px 10px;
@@ -74,5 +72,4 @@ const SocialsIcon = styled.a`
   &:active {
     scale: 0.9;
   }
-}
 `

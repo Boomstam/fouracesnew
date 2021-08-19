@@ -36,7 +36,7 @@ const getVideoIDs = (location) => {
 const getProgramName = (location, displayFormat) => {
   if(location === undefined || location === null ||
     location.state === undefined || location.state === null){
-    return "planBE";
+    return "Plan BE";
   }
   if(displayFormat == false){
     return location.state.program;

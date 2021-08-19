@@ -45,25 +45,29 @@ export default class EventList extends React.Component
 
         return(
             <StyledEvents>
-
                 {
                     events.map((event, i) => 
                         <Event>
-                            <Date>
-                                {event.date}
-                            </Date>
-                            <City>
-                                {event.city}
-                            </City>
-                            <Venue>
-                                {event.venue}
-                            </Venue>
-                            <Location href={getMapsLink(event.city)}>
-                                {event.location}
-                            </Location>
-                            <Link href={event.link}>
-                                {event.linkText}
-                            </Link>
+                            <EventDate>
+
+                            </EventDate>
+                            <EventInfo>
+                                <Date>
+                                    {event.date}
+                                </Date>
+                                <City>
+                                    {event.city}
+                                </City>
+                                <Venue>
+                                    {event.venue}
+                                </Venue>
+                                <Location href={getMapsLink(event.city)}>
+                                    {event.location}
+                                </Location>
+                                <Link href={event.link}>
+                                    {event.linkText}
+                                </Link>
+                            </EventInfo>
                         </Event>
                     )
                 }                
@@ -79,6 +83,19 @@ const StyledEvents = styled.div`
 
 const Event = styled.div`
     margin-bottom: 50px;
+    display: flex;
+`
+
+const EventDate = styled.div`
+    
+`
+
+const DateTitle = styled.h3`
+    text-align: center;
+`
+
+const EventInfo = styled.div`
+
 `
 
 const Date = styled.div`

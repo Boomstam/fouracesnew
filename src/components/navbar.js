@@ -47,6 +47,7 @@ const Navbar = ({navTop}) => (
                 <DropdownLink to={links.media} state={{ program: "Full_House" }}>Full House</DropdownLink>
                 <DropdownLink to={links.media} state={{ program: "For_Aces" }}>For Aces</DropdownLink>
                 <DropdownLink to={links.media} state={{ program: "Odyssee" }}>Odyssee</DropdownLink>
+                <DropdownLink to={links.media} state={{ program: "Foto's" }}>Photos</DropdownLink>
             </DropdownValueContainer>
         </Dropdown>
         <NavItem to={links.calendar}>AGENDA</NavItem>
@@ -134,7 +135,7 @@ const DropdownPlaceholder = styled.div`
 
 const DropdownValueContainer = styled.div`
     transform: translateY(-10px);
-    padding 10px;
+    padding: 10px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 1;

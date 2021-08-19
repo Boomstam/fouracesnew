@@ -31,7 +31,7 @@ const videoID = (data, index) => {
   return youtubePrefix + data.videoIDs[index];
 }
 
-export default MediaVideos;
+export default MediaVideos
 
 const MediaVideosContainer = styled.div`
     display: flex;

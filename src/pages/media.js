@@ -5,6 +5,7 @@ import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 import MediaVideos from '../components/mediaVideos'
+import Photos from '../components/photos'
 import styled from "styled-components"
 
 const mediaVideoIDs = {
@@ -17,15 +18,35 @@ const mediaVideoIDs = {
 
 function Media({ data, location }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
-  return (
-    <Layout>
-      <PageHeader imageFile={image}></PageHeader>
-      <PageContent>
-        <MediaTitle>{getProgramName(location, true)}</MediaTitle>
-        <MediaVideos videoIDs={getVideoIDs(location)}></MediaVideos>
-      </PageContent>
-    </Layout>
-  )
+  
+  if(isPhotos(location)){
+    return (
+      <Layout>
+        <PageHeader imageFile={image}></PageHeader>
+        <PageContent>
+          <Photos></Photos>
+        </PageContent>
+      </Layout>
+    )
+  } else {
+    return (
+      <Layout>
+        <PageHeader imageFile={image}></PageHeader>
+        <PageContent>
+          <MediaTitle>{getProgramName(location, true)}</MediaTitle>
+          <MediaVideos videoIDs={getVideoIDs(location)}></MediaVideos>
+        </PageContent>
+      </Layout>
+    )
+  }
+}
+
+const isPhotos  = (location) => {
+  if(location === undefined || location === null ||
+    location.state === undefined || location.state === null){
+    return false;
+  }
+  return location.state.program === "Photos";
 }
 
 const getVideoIDs = (location) => {

@@ -39,6 +39,5 @@ Layout.propTypes = {
 export default Layout
 
 const Main = styled.main`
-{
   color: var(--whiteText);
-}`
+`

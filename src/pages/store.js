@@ -9,10 +9,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import StoreLightbox from '../components/storeLightbox'
 
 const prices = {
-  tabulaRasa: 25,
+  tabulaRasa: 20,
   forAces: 20,
   odyssee: 15,
-  puzzel: 35,
+  puzzel: 30,
 }
 
 function Store({ data }) {

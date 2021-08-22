@@ -19,6 +19,7 @@ const mediaVideoIDs = {
 const headerImageIndex = 0;
 
 function Media({ data, location }) {
+  
   const edges = data.allFile.edges;
   const headerImage = getImage(edges[headerImageIndex].node.childImageSharp);
   

@@ -2,16 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import storage from '../storage/storage';
 
-const textType = "Other";
+/*const textType = "Other";
 const numColumns = 5;
 const firstEventTop = 28;
 const spaceBetween = 10;
-const heightSuffix = "vh";
+const heightSuffix = "vh";*/
 const mapsLink = "https://www.google.com/maps/search/?api=1&query=";
+const months = ["JANUARI", "FEBRUARI", "MAART", "APRIL", "MEI", "JUNI", 
+    "JULI", "AUGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DECEMBER"];
 
-function getMapsLink(info){
+function getMapsLink(location){
 
-    let link = mapsLink + info.location;
+    let link = mapsLink + location;
 
     link = encodeURI(link);
 
@@ -47,25 +49,27 @@ export default class EventList extends React.Component
             <StyledEvents>
                 {
                     events.map((event, i) => 
-                        <Event>
+                        <Event key={JSON.stringify(event)}>
                             <EventDate>
-
+                                <DateMonth>
+                                    {getMonth(event.date)}
+                                </DateMonth>
+                                <DateDay>
+                                    {getDay(event.date)}
+                                </DateDay>
                             </EventDate>
                             <EventInfo>
                                 <Date>
-                                    {event.date}
+                                    Datum: {event.date}
                                 </Date>
-                                <City>
-                                    {event.city}
-                                </City>
                                 <Venue>
-                                    {event.venue}
+                                    Programma: {event.venue}
                                 </Venue>
-                                <Location href={getMapsLink(event.city)}>
-                                    {event.location}
+                                <Location href={getMapsLink(event.location)}>
+                                    Locatie: {event.location}
                                 </Location>
-                                <Link href={event.link}>
-                                    {event.linkText}
+                                <Link href={event.linkText}>
+                                    Link
                                 </Link>
                             </EventInfo>
                         </Event>
@@ -76,8 +80,18 @@ export default class EventList extends React.Component
     }
 }
 
+const getMonth = (date) => {
+    const monthIndex = parseInt(date.split("-")[1]) - 1;
+    const month = months[monthIndex];
+    return month;
+}
+
+const getDay = (date) => {
+    const day = date.split("-")[0];
+    return day;
+}
+
 const StyledEvents = styled.div`
-    
     
 `
 
@@ -87,11 +101,7 @@ const Event = styled.div`
 `
 
 const EventDate = styled.div`
-    
-`
-
-const DateTitle = styled.h3`
-    text-align: center;
+    margin-right: 100px;
 `
 
 const EventInfo = styled.div`
@@ -100,6 +110,23 @@ const EventInfo = styled.div`
 
 const Date = styled.div`
     
+`
+
+const DateMonth = styled.div`
+    background-color: #E9564F;
+    color: white;
+    padding: 10px 15px;
+    width: 150px;
+    text-align: center;
+`
+
+const DateDay = styled.div`
+    text-align: center;
+    margin: auto;
+    padding: 15px 0px;
+    border: 1px solid rgba(100, 100, 100, 0.8);
+    border-top: none;
+    font-size: 24px;
 `
     
 const City = styled.div`
@@ -115,5 +142,5 @@ const Location = styled.a`
 `
 
 const Link = styled.a`
-
+    display: block;
 `

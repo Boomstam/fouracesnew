@@ -58,7 +58,7 @@ export default class CalendarLoader extends React.Component
                 'maxResults': 10, 
                 'orderBy': 'startTime'});
         request.execute(function (rawData) {
-            eventFormatter(rawData);
+                eventFormatter(rawData);
             });
         });
     }

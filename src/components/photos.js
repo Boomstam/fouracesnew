@@ -88,6 +88,7 @@ const LightboxClose = styled.div`
     font-size: 24px;
     cursor: pointer;
     z-index: 2;
+    display: "none";
 `
 
 const PhotosContainer = styled.div`

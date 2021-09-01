@@ -7,6 +7,7 @@ import { getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import StoreLightbox from '../components/storeLightbox'
+import emailjs from 'emailjs-com'
 
 const prices = {
   tabulaRasa: 20,
@@ -41,6 +42,22 @@ function Store({ data }) {
   const getAmounts = () => { 
     return { tabulaRasa: tabulaRasa, forAces: forAces, odyssee: odyssee, puzzel: puzzel }; 
   };
+
+  const getOrderString = () => {
+    const camelCaseToDisplayText = (string) => {
+      return string.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
+    }
+    let orderString = "";
+    for (const [key, value] of Object.entries(prices)) {
+      const name = camelCaseToDisplayText(key);
+      const amount = getAmounts()[key];
+      const price = value;
+      orderString += amount + "x " + name + " aan " + price + "€, ";
+    }
+    orderString += "voor een totaal van " + getTotal() + "€.";
+    
+    return orderString;
+  }
 
   return (
     <Layout>
@@ -121,6 +138,7 @@ function Store({ data }) {
             amounts: getAmounts(), 
             prices: prices, 
             total: getTotal(),
+            orderString: getOrderString(),
             orderCallback() { 
               setShowOrderDetails("none");
               setShowCustomerDetails("block");
@@ -128,11 +146,25 @@ function Store({ data }) {
             continueCallback() { 
               setShowLightbox("hidden");
             },
-            finishCallback() { 
-              setShowLightbox("hidden");
-              //emailjs.init('YOUR_USER_ID');
-              //emailjs.sendForm('contact_service', 'contact_form', this);
-            }
+            finishCallback(e) { 
+
+              const submitButton = document.getElementById("submit_container");
+              try{
+                submitButton.firstChild.innerHTML = "Bestelling verzenden...";
+                submitButton.firstChild.setAttribute("disabled", true);
+              }catch{}
+
+              e.preventDefault();
+
+              emailjs.sendForm('service_1mqpk5d', 'store_template', e.target, 'user_tIm8Kx5BKGF6uoDLBuyHB')
+                .then((result) => {
+                    console.log(result.text);
+                    window.location.reload(false);
+                }, (error) => {
+                    console.log(error.text);
+                    window.location.reload(false);
+                });
+              }
           }
           }></StoreLightbox>
       </PageContent>

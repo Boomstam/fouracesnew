@@ -9,8 +9,8 @@ function OrderDetails ({basket}) {
                 <Products>
                     <Product>
                         <ProductText>Tabula Rasa</ProductText>
-                        <Amount>{basket.amounts.tabulaRasa}x</Amount>
-                        <Price>{basket.prices.tabulaRasa}€</Price>
+                        <Amount name="tabula_rasa_amount">{basket.amounts.tabulaRasa}x</Amount>
+                        <Price name="tabula_rasa_price">{basket.prices.tabulaRasa}€</Price>
                     </Product>
                     <Product>
                         <ProductText>For Aces</ProductText>

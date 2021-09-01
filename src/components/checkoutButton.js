@@ -7,7 +7,7 @@ function CheckoutButton ({ data }) {
     )
 }
 
-const Button = styled.div`
+const Button = styled.button`
     padding: 10px 20px;
     height: 50px;
     background-color: black;
@@ -26,6 +26,10 @@ const Button = styled.div`
 
     &:active {
         scale: 0.9;
+    }
+    &:disabled {
+        background-color: grey;
+        pointer-events: none;
     }
 `
 

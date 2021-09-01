@@ -23,7 +23,7 @@ function Contact({ data }) {
           <MessageTitle>Uw bericht</MessageTitle>
           <Message name="message"></Message>
           <SpaceBetween></SpaceBetween>
-          <Submit>Verstuur</Submit>
+          <Submit id="submit">Verstuur</Submit>
         </ContactForm>
       </PageContent>
     </Layout>
@@ -31,16 +31,21 @@ function Contact({ data }) {
 }
 
 const submitForm = (e) => {
-  console.log("submitted");
-  //emailjs.init('YOUR_USER_ID');
-  //emailjs.sendForm('contact_service', 'contact_form', this);
+  const submitButton = document.getElementById("submit");
+  try{
+    submitButton.innerHTML = "Versturen...";
+    submitButton.firstChild.setAttribute("disabled", true);
+  }catch{}
+
   e.preventDefault();
 
   emailjs.sendForm('service_1mqpk5d', 'contact_template', e.target, 'user_tIm8Kx5BKGF6uoDLBuyHB')
     .then((result) => {
         console.log(result.text);
+        window.location.reload(false);
     }, (error) => {
         console.log(error.text);
+        window.location.reload(false);
     });
 }
 

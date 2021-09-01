@@ -15,13 +15,13 @@ function Contact({ data }) {
       <PageContent>
         <ContactForm onSubmit={submitForm}>
           <NameTitle>Uw naam</NameTitle>
-          <Name type="text" name="user_name"></Name>
+          <Name type="text" name="user_name" required></Name>
           <SpaceBetween></SpaceBetween>
           <MailAddressTitle>Uw mail-adres</MailAddressTitle>
-          <MailAddress type="email" name="user_email"></MailAddress>
+          <MailAddress type="email" name="user_email" required></MailAddress>
           <SpaceBetween></SpaceBetween>
           <MessageTitle>Uw bericht</MessageTitle>
-          <Message name="message"></Message>
+          <Message name="message" required></Message>
           <SpaceBetween></SpaceBetween>
           <Submit id="submit">Verstuur</Submit>
         </ContactForm>

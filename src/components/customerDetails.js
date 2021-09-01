@@ -1,25 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components"
 import CheckoutButton from './checkoutButton'
 
 function CustomerDetails ({basket}) {
+    useEffect(() => {
+        disableSubmit();
+      });
     return(
         <CustomerDetailsContainer  
             onSubmit={basket.finishCallback} 
             style={{ display: basket.visibility.showCustomerDetails }}>
-            <Explanation>Vul hieronder uw gegevens in, en wij sturen u de nodige betalings informatie via mail en zorgen vervolgens dat uw bestelling bij u geraakt. Alvast bedankt!</Explanation>
-            <NameTitle>Uw Naam</NameTitle>
-            <Name type="text" name="user_name"></Name>
+            <Explanation>Vul hieronder uw gegevens in, en wij sturen u de nodige betalingsinformatie via mail en zorgen vervolgens dat uw bestelling bij u geraakt. Alvast bedankt!</Explanation>
+            <NameTitle>Uw naam</NameTitle>
+            <Name type="text" name="user_name" required></Name>
             <MailTitle>Uw e-mail adres</MailTitle>
-            <MailAddress type="email" name="user_email"></MailAddress>
+            <MailAddress type="email" name="user_email" required></MailAddress>
             <AddressTitle>Uw adres</AddressTitle>
-            <Address type="text" name="user_address"></Address>
+            <Address type="text" name="user_address" required></Address>
             <ButtonContainer id="submit_container">
+                <CheckoutButton data={{ callback: basket.continueCallback, text:"Verder Winkelen" }}></CheckoutButton>
                 <CheckoutButton data={{ callback: () => undefined, text: "Bestelling afronden" }}></CheckoutButton>
             </ButtonContainer>
             <Basket name="order" defaultValue={basket.orderString}></Basket>
         </CustomerDetailsContainer>
     )
+}
+
+const disableSubmit = () => {
+    const submitButton = document.getElementById("submit_container").firstChild;
+    try{
+        submitButton.setAttribute("type", "button");
+    }catch{}
 }
 
 const CustomerDetailsContainer = styled.form`
@@ -58,8 +69,8 @@ const Address = styled.input`
 `
 
 const ButtonContainer = styled.div`
-    width: 50%;
-    margin-left: 25%;
+    display: flex;
+    justify-content: space-between;
     margin-top: 50px;
 `
 

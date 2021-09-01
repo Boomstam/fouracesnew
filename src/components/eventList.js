@@ -65,11 +65,11 @@ export default class EventList extends React.Component
                                 <Venue>
                                     Programma: {event.venue}
                                 </Venue>
-                                <Location href={getMapsLink(event.location)}>
+                                <Location href={getMapsLink(event.location)} target="_blank">
                                     Locatie: {event.location}
                                 </Location>
-                                <Link href={event.linkText}>
-                                    Link
+                                <Link href={event.linkText} target="_blank">
+                                    Tickets en info
                                 </Link>
                             </EventInfo>
                         </Event>
@@ -118,6 +118,7 @@ const DateMonth = styled.div`
     padding: 10px 15px;
     width: 150px;
     text-align: center;
+    border: 1px solid rgba(100, 100, 100, 0.8);
 `
 
 const DateDay = styled.div`

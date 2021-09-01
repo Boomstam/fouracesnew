@@ -147,11 +147,10 @@ function Store({ data }) {
               setShowLightbox("hidden");
             },
             finishCallback(e) { 
-
-              const submitButton = document.getElementById("submit_container");
+              const submitButton = document.getElementById("submit_container").children[1];
               try{
-                submitButton.firstChild.innerHTML = "Bestelling verzenden...";
-                submitButton.firstChild.setAttribute("disabled", true);
+                submitButton.innerHTML = "Bestelling verzenden...";
+                submitButton.setAttribute("disabled", true);
               }catch{}
 
               e.preventDefault();

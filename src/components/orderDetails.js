@@ -34,7 +34,7 @@ function OrderDetails ({basket}) {
                 </Total>
                 <Checkout>
                     <CheckoutButton data={{ callback: basket.continueCallback, text:"Verder Winkelen" }}></CheckoutButton>
-                    <CheckoutButton data={{ callback: basket.orderCallback, text:"Bestellen!" }}></CheckoutButton>
+                    <CheckoutButton data={{ callback: basket.orderCallback, text:"Bestellen" }}></CheckoutButton>
                 </Checkout>
             </OrderDetailsContainer>
     )

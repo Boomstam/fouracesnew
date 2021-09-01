@@ -5,6 +5,7 @@ import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import emailjs from 'emailjs-com'
 
 function Contact({ data }) {
   const image = getImage(data.allFile.edges[0].node.childImageSharp);
@@ -12,21 +13,35 @@ function Contact({ data }) {
     <Layout>
       <PageHeader imageFile={image}></PageHeader>
       <PageContent>
-        <ContactForm>
+        <ContactForm onSubmit={submitForm}>
           <NameTitle>Uw naam</NameTitle>
-          <Name></Name>
+          <Name type="text" name="user_name"></Name>
           <SpaceBetween></SpaceBetween>
           <MailAddressTitle>Uw mail-adres</MailAddressTitle>
-          <MailAddress></MailAddress>
+          <MailAddress type="email" name="user_email"></MailAddress>
           <SpaceBetween></SpaceBetween>
           <MessageTitle>Uw bericht</MessageTitle>
-          <Message></Message>
+          <Message name="message"></Message>
           <SpaceBetween></SpaceBetween>
           <Submit>Verstuur</Submit>
         </ContactForm>
       </PageContent>
     </Layout>
   )
+}
+
+const submitForm = (e) => {
+  console.log("submitted");
+  //emailjs.init('YOUR_USER_ID');
+  //emailjs.sendForm('contact_service', 'contact_form', this);
+  e.preventDefault();
+
+  emailjs.sendForm('service_1mqpk5d', 'contact_template', e.target, 'user_tIm8Kx5BKGF6uoDLBuyHB')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
 }
 
 export const pageQuery = graphql`
@@ -69,7 +84,7 @@ const MessageTitle = styled.h3`
 
 `
 
-const Message = styled.input`
+const Message = styled.textarea`
   width: 100%;
   height: 200px;
 `

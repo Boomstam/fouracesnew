@@ -128,10 +128,6 @@ const DateDay = styled.div`
     border-top: none;
     font-size: 24px;
 `
-    
-const City = styled.div`
-    
-`
 
 const Venue = styled.div`
     

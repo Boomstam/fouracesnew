@@ -113,7 +113,7 @@ const Date = styled.div`
 `
 
 const DateMonth = styled.div`
-    background-color: #E9564F;
+    background-color: black;
     color: white;
     padding: 10px 15px;
     width: 150px;

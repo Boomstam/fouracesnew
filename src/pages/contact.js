@@ -17,7 +17,7 @@ function Contact({ data }) {
           <NameTitle>Uw naam</NameTitle>
           <Name type="text" name="user_name" required></Name>
           <SpaceBetween></SpaceBetween>
-          <MailAddressTitle>Uw mail-adres</MailAddressTitle>
+          <MailAddressTitle>Uw email-adres</MailAddressTitle>
           <MailAddress type="email" name="user_email" required></MailAddress>
           <SpaceBetween></SpaceBetween>
           <MessageTitle>Uw bericht</MessageTitle>
